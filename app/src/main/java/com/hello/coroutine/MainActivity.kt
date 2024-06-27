@@ -37,7 +37,10 @@ class MainActivity : AppCompatActivity() {
         //Coroutine2().inDepth()
 
         // 코루틴 예외처리
-        Coroutine3().exception()
+        //Coroutine3().exception()
+
+        //Structured Concurrency
+        Coroutine4().structuredConcurrency()
     }
 
     companion object {
