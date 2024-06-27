@@ -34,7 +34,10 @@ class MainActivity : AppCompatActivity() {
         //Coroutine1().basic()
 
         // 코루틴 심화
-        Coroutine2().inDepth()
+        //Coroutine2().inDepth()
+
+        // 코루틴 예외처리
+        Coroutine3().exception()
     }
 
     companion object {

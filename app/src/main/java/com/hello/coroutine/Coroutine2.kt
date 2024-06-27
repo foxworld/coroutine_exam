@@ -20,14 +20,14 @@ import kotlinx.coroutines.runBlocking
 class Coroutine2 {
 
     fun inDepth() {
-//        Log.i(TAG, "Coroutine cancel 적용되는 example ##############################################")
-//        example1()
-//
-//        Log.i(TAG, "Coroutine cancel 적용 안되는 example ############################################")
-//        example2_1()
+        Log.i(TAG, "Coroutine cancel 적용되는 example ##############################################")
+        example1()
 
-//        Log.i(TAG, "Coroutine cancel 적용 될 수 있도록 수정한 example ###############################")
-//        example2_2()
+        Log.i(TAG, "Coroutine cancel 적용 안되는 example ############################################")
+        example2_1()
+
+        Log.i(TAG, "Coroutine cancel 적용 될 수 있도록 수정한 example ###############################")
+        example2_2()
 
         Log.i(TAG, "Coroutine cancel CancellationException 예외처리시 취소 적용 안되는 example #######")
         example2_3()
@@ -97,6 +97,8 @@ class Coroutine2 {
                 delay(1000L)
             } catch(e : CancellationException) {
                 // 아무처리도 안함
+            } finally {
+                // 필요한 자원을 닫을 수 도 있다
             }
 
             printWithThread("delay에 의해 취소되지 않았다!")
@@ -104,7 +106,6 @@ class Coroutine2 {
 
         delay(100L)
         printWithThread("취소 시작")
-        job.cancel()
+        job.cancel() // job.cancel() 함수는 CancellationException 던진다
     }
-
 }
