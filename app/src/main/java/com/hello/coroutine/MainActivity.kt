@@ -40,7 +40,20 @@ class MainActivity : AppCompatActivity() {
         //Coroutine3().exception()
 
         //Structured Concurrency
-        Coroutine4().structuredConcurrency()
+        //수많은 코루틴이 유실되거나 누수되지 않도록 보장
+        //코드내에 에러가 유실되지 않고 적절히 보고될 수 있도록 보장
+        //Coroutine4().structuredConcurrency()
+
+        //Suspending fuction example
+        //SuspendingFunction().main()
+        //해당시간안에 끝나지 않으면 에러 또는 Null를 리턴한다
+        //WithTimeout().main()
+        //WithTimeoutOrNull().main()
+
+        //Continuation Passing Style (CPS)
+        ContinuationExample().main()
+
+
     }
 
     companion object {
