@@ -10,7 +10,6 @@ package com.hello.coroutine
 import com.hello.coroutine.MainActivity.Companion.printWithThread
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
-import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
