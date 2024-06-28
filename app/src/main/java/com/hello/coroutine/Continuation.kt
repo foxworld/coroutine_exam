@@ -33,6 +33,7 @@ class UserService {
     }
 
     suspend fun findUser(userId : Long, continuation: Continuation?) : UserDto {
+        // sm 이 NULL 이면 객체를 생성하고 아니면 생성된 객체를 사용한다
         val sm = continuation as? FindUserContinuation?: object : FindUserContinuation() {
             override suspend fun resumeWith(data: Any?) {
                 when(label) {
@@ -59,6 +60,7 @@ class UserService {
                 val image = userImageRepository.findImage(sm.profile!!, sm)
             }
         }
+        printWithThread("UserDto 삐쟈니올때 계속 실행됨!!")
         return UserDto(sm.profile!!, sm.image!!)
     }
 }
